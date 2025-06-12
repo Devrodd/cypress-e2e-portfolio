@@ -1,7 +1,7 @@
 
-describe('Login', () => {
+describe('Get elements', () => {
 
-    it('Login com sucesso', () => {
+    it('Obter elementos', () => {
         
         cy.visit('/')
             //get() - selecionar elementos
@@ -13,13 +13,13 @@ describe('Login', () => {
             .contains('Login')
 
             // find() - encontra elementos
-
-        cy.get('cabecalho')
+            // geralmente diminuimos o escopo com um get()
+        cy.get('@cabecalho')
             .find('.fa-user')
 
            //as() - alias 
-
-           cy.get('cabecalho')
-           .find('.fa-user')
+            //serve para criar apelidos (atalhos ) para grandes comandos
+           cy.get('@cabecalho')
+            .find('.fa-user')
     })
 })
